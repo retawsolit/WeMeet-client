@@ -12,11 +12,11 @@ import { useTranslation } from 'react-i18next';
 import {
   CommonResponseSchema,
   RoomEndAPIReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { useAppSelector, store, useAppDispatch } from '../../store';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 import HeaderMenus from './menus';
 import RoomSettings from './room-settings';
 import './style.css';

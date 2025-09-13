@@ -6,12 +6,12 @@ import {
   CommonResponseSchema,
   SwitchPresenterReqSchema,
   SwitchPresenterTask,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { useAppSelector } from '../../../../../store';
 import { participantsSelector } from '../../../../../store/slices/participantSlice';
-import sendAPIRequest from '../../../../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../../../../helpers/api/WeMeetAPI';
 
 interface ISwitchPresenterMenuItemProps {
   userId: string;

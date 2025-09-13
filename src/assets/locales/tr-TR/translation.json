@@ -6,7 +6,7 @@
   "no": "Hayır",
   "join": "Katıl",
   "share": "Paylaş",
-  "plugnmeet-server-client-version": "Sunucu: v{{server}}; İstemci: v{{client}}",
+  "wemeet-server-client-version": "Sunucu: v{{server}}; İstemci: v{{client}}",
   "open": "Aç",
   "please-wait": "Lütfen bekleyin...",
   "are-you-sure-to-close": "Kapatılacak, emin misiniz?",

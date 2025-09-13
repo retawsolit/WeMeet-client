@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
-import { BreakoutRoom } from 'plugnmeet-protocol-js';
+import { BreakoutRoom } from 'wemeet-protocol-js';
 
 import { useGetBreakoutRoomsQuery } from '../../../store/services/breakoutRoomApi';
 import EndBtn from './room/endBtn';

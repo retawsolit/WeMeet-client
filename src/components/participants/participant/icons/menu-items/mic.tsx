@@ -6,12 +6,12 @@ import {
   CommonResponseSchema,
   DataMsgBodyType,
   MuteUnMuteTrackReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { store, useAppSelector } from '../../../../../store';
 import { participantsSelector } from '../../../../../store/slices/participantSlice';
-import sendAPIRequest from '../../../../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../../../../helpers/api/WeMeetAPI';
 import { getNatsConn } from '../../../../../helpers/nats';
 
 interface IMicMenuItemProps {

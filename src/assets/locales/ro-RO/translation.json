@@ -6,7 +6,7 @@
   "no": "Nu",
   "join": "Alătura",
   "share": "Acțiune",
-  "plugnmeet-server-client-version": "Server: v{{server}}; Client: v{{client}}",
+  "wemeet-server-client-version": "Server: v{{server}}; Client: v{{client}}",
   "open": "Deschide",
   "please-wait": "Te rog să aştepţi...",
   "are-you-sure-to-close": "Sunteți sigur că veți închide?",

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RoomMetadataSchema } from 'plugnmeet-protocol-js';
+import { RoomMetadataSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import {
@@ -29,8 +29,8 @@ const initialState: ISession = {
     sid: '',
     roomId: '',
     metadata: create(RoomMetadataSchema, {
-      roomTitle: 'plugNmeet',
-      welcomeMessage: 'Welcome to plugNmeet!',
+      roomTitle: 'WeMeet',
+      welcomeMessage: 'Welcome to WeMeet!',
       isRecording: false,
       isActiveRtmp: false,
       parentRoomId: '',
@@ -106,7 +106,7 @@ const initialState: ISession = {
       },
       copyrightConf: {
         display: true,
-        text: 'Powered by <a href="https://www.plugnmeet.org" target="_blank">plugNmeet</a>',
+        text: 'Powered by <a href="https://www.wemeet.org" target="_blank">WeMeet</a>',
       },
     }),
   },

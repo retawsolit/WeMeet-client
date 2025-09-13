@@ -6,7 +6,7 @@
   "no": "Όχι",
   "join": "Ενώνω",
   "share": "Μετοχή",
-  "plugnmeet-server-client-version": "Διακομιστής: v{{server}}; Πελάτης: v{{client}}",
+  "wemeet-server-client-version": "Διακομιστής: v{{server}}; Πελάτης: v{{client}}",
   "open": "Ανοίγω",
   "please-wait": "Παρακαλώ περίμενε...",
   "are-you-sure-to-close": "Είστε σίγουροι ότι θα κλείσετε;",

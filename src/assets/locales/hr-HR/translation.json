@@ -6,7 +6,7 @@
   "no": "Ne",
   "join": "Pridružiti",
   "share": "Dijeliti",
-  "plugnmeet-server-client-version": "Poslužitelj: v{{server}}; Klijent: v{{client}}",
+  "wemeet-server-client-version": "Poslužitelj: v{{server}}; Klijent: v{{client}}",
   "open": "Otvoren",
   "please-wait": "Molim te čekaj...",
   "are-you-sure-to-close": "Jeste li sigurni da ćete zatvoriti?",

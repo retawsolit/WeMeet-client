@@ -6,7 +6,7 @@
   "no": "לא",
   "join": "הצטרף",
   "share": "לשתף",
-  "plugnmeet-server-client-version": "שרת: v{{server}}; לקוח: v{{client}}",
+  "wemeet-server-client-version": "שרת: v{{server}}; לקוח: v{{client}}",
   "open": "פתוח",
   "please-wait": "חכה בבקשה...",
   "are-you-sure-to-close": "האם אתה בטוח לסגור?",

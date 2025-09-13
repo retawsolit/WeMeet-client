@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { DataChannelMessage, DataMsgBodyType } from 'plugnmeet-protocol-js';
+import { DataChannelMessage, DataMsgBodyType } from 'wemeet-protocol-js';
 
 import { store } from '../../store';
 import {

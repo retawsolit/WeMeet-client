@@ -83,7 +83,7 @@ module.exports = {
   plugins: [
     {
       apply: (compiler) => {
-        compiler.hooks.initialize.tap('PlugNmeet', () => {
+        compiler.hooks.initialize.tap('WeMeet', () => {
           // temporary work around for worker files
           const from = path.resolve(
             __dirname,

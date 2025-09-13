@@ -6,7 +6,7 @@
   "no": "Ei",
   "join": "Ühinema",
   "share": "Jagama",
-  "plugnmeet-server-client-version": "Server: v{{server}}; Tellija: v{{client}}",
+  "wemeet-server-client-version": "Server: v{{server}}; Tellija: v{{client}}",
   "open": "Avama",
   "please-wait": "Oota...",
   "are-you-sure-to-close": "Kas olete kindel, et sulgete?",

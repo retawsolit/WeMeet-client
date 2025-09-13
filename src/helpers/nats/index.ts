@@ -1,5 +1,5 @@
 import { Dispatch } from 'react';
-import { NatsSubjects } from 'plugnmeet-protocol-js';
+import { NatsSubjects } from 'wemeet-protocol-js';
 
 import ConnectNats from './ConnectNats';
 import { IErrorPageProps } from '../../components/extra-pages/Error';

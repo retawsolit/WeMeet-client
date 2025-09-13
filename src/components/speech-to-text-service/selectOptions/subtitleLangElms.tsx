@@ -7,7 +7,7 @@ import {
   Transition,
 } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
-import { SpeechToTextTranslationFeatures } from 'plugnmeet-protocol-js';
+import { SpeechToTextTranslationFeatures } from 'wemeet-protocol-js';
 
 import { getSubtitleLangs, SupportedLangs } from '../helpers/supportedLangs';
 

@@ -6,7 +6,7 @@
   "no": "Non",
   "join": "Rejoindre",
   "share": "Partager",
-  "plugnmeet-server-client-version": "Serveur : v{{server}}; Client :{{client}}",
+  "wemeet-server-client-version": "Serveur : v{{server}}; Client :{{client}}",
   "open": "Ouvrir",
   "please-wait": "Veuillez patienter...",
   "are-you-sure-to-close": "Êtes-vous sûr de vouloir supprimer?",

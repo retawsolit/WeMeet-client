@@ -23,7 +23,7 @@ import {
   AnalyticsEvents,
   AnalyticsEventType,
   DataMsgBodyType,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { toast } from 'react-toastify';
 
 import { store } from '../../store';

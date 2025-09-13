@@ -4,11 +4,11 @@ import {
   ApproveWaitingUsersReqSchema,
   CommonResponseSchema,
   RemoveParticipantReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { IParticipant } from '../../store/slices/interfaces/participant';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 import { toast } from 'react-toastify';
 import { store } from '../../store';
 

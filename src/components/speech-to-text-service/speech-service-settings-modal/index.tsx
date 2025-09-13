@@ -10,7 +10,7 @@ import {
 } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { SpeechToTextTranslationReqSchema } from 'plugnmeet-protocol-js';
+import { SpeechToTextTranslationReqSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { updateDisplaySpeechSettingsModal } from '../../../store/slices/bottomIconsActivitySlice';

@@ -6,7 +6,7 @@
   "no": "نه",
   "join": "وارد شدن",
   "share": "اشتراک‌گذاری",
-  "plugnmeet-server-client-version": "سرور: v{{server}}; مشتری: v{{client}}",
+  "wemeet-server-client-version": "سرور: v{{server}}; مشتری: v{{client}}",
   "open": "باز کردن",
   "please-wait": "لطفاً منتظر بمانید...",
   "are-you-sure-to-close": "آیا مطمئن هستید که میخواهید عملیات را متوقف کنید؟",

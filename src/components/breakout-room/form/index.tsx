@@ -5,7 +5,7 @@ import {
   BreakoutRoom,
   BreakoutRoomSchema,
   CreateBreakoutRoomsReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { store, useAppDispatch, useAppSelector } from '../../../store';

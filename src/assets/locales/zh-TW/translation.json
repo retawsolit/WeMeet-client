@@ -6,7 +6,7 @@
   "no": "取消",
   "join": "加入",
   "share": "分享",
-  "plugnmeet-server-client-version": "伺服器：v{{server}};客戶： v{{client}}",
+  "wemeet-server-client-version": "伺服器：v{{server}};客戶： v{{client}}",
   "open": "開啟",
   "please-wait": "請稍候。。。",
   "are-you-sure-to-close": "確定要移除?",

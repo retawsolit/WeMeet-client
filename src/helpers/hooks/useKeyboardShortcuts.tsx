@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {
   NatsMsgClientToServerEvents,
   NatsMsgClientToServerSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { store, useAppDispatch } from '../../store';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BreakoutRoomUser } from 'plugnmeet-protocol-js';
+import { BreakoutRoomUser } from 'wemeet-protocol-js';
 
 interface IBreakoutRoomUsersProps {
   users: Array<BreakoutRoomUser>;

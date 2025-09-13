@@ -6,7 +6,7 @@
   "no": "لا",
   "join": "إنضم",
   "share": "مشاركة",
-  "plugnmeet-server-client-version": "الخادم: v{{server}}; العميل: v{{client}}",
+  "wemeet-server-client-version": "الخادم: v{{server}}; العميل: v{{client}}",
   "open": "فتح",
   "please-wait": "الرجاء الإنتظار...",
   "are-you-sure-to-close": "هل أنت متأكد من الإغلاق؟",

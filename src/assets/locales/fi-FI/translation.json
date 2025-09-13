@@ -6,7 +6,7 @@
   "no": "Ei",
   "join": "Liittyä",
   "share": "Jakaa",
-  "plugnmeet-server-client-version": "Palvelin: v{{server}}; Asiakas: v{{client}}",
+  "wemeet-server-client-version": "Palvelin: v{{server}}; Asiakas: v{{client}}",
   "open": "Avata",
   "please-wait": "Ole hyvä ja odota...",
   "are-you-sure-to-close": "Oletko varma, että suljet?",

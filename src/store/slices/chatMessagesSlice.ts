@@ -1,6 +1,6 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '..';
-import { ChatMessage } from 'plugnmeet-protocol-js';
+import { ChatMessage } from 'wemeet-protocol-js';
 
 const chatMessagesAdapter = createEntityAdapter({
   selectId: (chatMessage: ChatMessage) => chatMessage.id,

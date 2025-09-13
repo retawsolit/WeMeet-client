@@ -6,7 +6,7 @@
   "no": "Nej",
   "join": "Ansluta",
   "share": "Aktie",
-  "plugnmeet-server-client-version": "Server: v{{server}}; Beställare: v{{client}}",
+  "wemeet-server-client-version": "Server: v{{server}}; Beställare: v{{client}}",
   "open": "Öppna",
   "please-wait": "Snälla vänta...",
   "are-you-sure-to-close": "Är du säker på att stänga?",

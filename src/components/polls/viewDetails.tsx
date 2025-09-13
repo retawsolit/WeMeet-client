@@ -8,7 +8,7 @@ import {
   TransitionChild,
 } from '@headlessui/react';
 import { toast } from 'react-toastify';
-import { ClosePollReqSchema } from 'plugnmeet-protocol-js';
+import { ClosePollReqSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import {

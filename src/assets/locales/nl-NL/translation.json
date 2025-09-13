@@ -6,7 +6,7 @@
   "no": "Nee",
   "join": "Deelnemen",
   "share": "Delen",
-  "plugnmeet-server-client-version": "Server: v{{server}}; Client: v{{client}}",
+  "wemeet-server-client-version": "Server: v{{server}}; Client: v{{client}}",
   "open": "Open",
   "please-wait": "Een ogenblik geduld...",
   "are-you-sure-to-close": "Weet u zeker dat u wilt stoppen?",

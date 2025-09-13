@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useVirtual from 'react-cool-virtual';
-import { ChatMessage } from 'plugnmeet-protocol-js';
+import { ChatMessage } from 'wemeet-protocol-js';
 
 import { store, useAppSelector } from '../../../store';
 import { chatMessagesSelector } from '../../../store/slices/chatMessagesSlice';

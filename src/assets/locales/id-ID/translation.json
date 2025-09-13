@@ -6,7 +6,7 @@
   "no": "Tidak",
   "join": "Ikat",
   "share": "Bagi",
-  "plugnmeet-server-client-version": "Server: v{{server}}; Klien: v{{client}}",
+  "wemeet-server-client-version": "Server: v{{server}}; Klien: v{{client}}",
   "open": "Buka",
   "please-wait": "Harap tunggu...",
   "are-you-sure-to-close": "Apakah Anda yakin untuk tutup?",

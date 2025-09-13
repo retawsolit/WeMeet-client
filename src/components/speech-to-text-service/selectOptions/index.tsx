@@ -11,7 +11,7 @@ import {
   SpeechRecognizer,
   TranslationRecognizer,
 } from 'microsoft-cognitiveservices-speech-sdk';
-import { SpeechToTextTranslationFeatures } from 'plugnmeet-protocol-js';
+import { SpeechToTextTranslationFeatures } from 'wemeet-protocol-js';
 
 import { store } from '../../../store';
 import SpeechToTextLangElms from './speechToTextLangElms';

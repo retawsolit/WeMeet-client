@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // @ts-expect-error won't be a problem
 import { VideoJsPlayer, VideoJsPlayerOptions } from 'video.js';
-import { DataMsgBodyType } from 'plugnmeet-protocol-js';
+import { DataMsgBodyType } from 'wemeet-protocol-js';
 
 import PlayerComponent from './player';
 import { getNatsConn } from '../../../helpers/nats';

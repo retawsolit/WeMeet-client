@@ -13,7 +13,7 @@ import { store } from './store';
 import App from './components/app';
 import Loading from './components/extra-pages/Loading';
 
-const container = document.getElementById('plugNmeet-app');
+const container = document.getElementById('WeMeet-app');
 
 if (container) {
   const root = createRoot(container);
@@ -31,6 +31,6 @@ if (container) {
   );
 } else {
   throw new Error(
-    "Root element with ID 'plugNmeet-app' was not found in the document. Ensure there is a corresponding HTML element with the ID 'plugNmeet-app' in your HTML file.",
+    "Root element with ID 'WeMeet-app' was not found in the document. Ensure there is a corresponding HTML element with the ID 'WeMeet-app' in your HTML file.",
   );
 }

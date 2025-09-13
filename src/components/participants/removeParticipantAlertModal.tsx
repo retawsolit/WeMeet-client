@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 import {
   CommonResponseSchema,
   RemoveParticipantReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { store } from '../../store';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 
 export interface IRemoveParticipantAlertModalData {
   name: string;

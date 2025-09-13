@@ -8,10 +8,10 @@ import {
   CreatePollReqSchema,
   SubmitPollResponseReqSchema,
   ClosePollReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { fromBinary, toBinary, toJson } from '@bufbuild/protobuf';
 
-import { requestToRenewPnmToken } from '../../helpers/api/plugNmeetAPI';
+import { requestToRenewPnmToken } from '../../helpers/api/WeMeetAPI';
 
 export const pollsApi = createApi({
   reducerPath: 'pollsApi',

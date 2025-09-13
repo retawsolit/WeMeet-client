@@ -247,7 +247,7 @@ const useClientCustomization = () => {
 
     if (css !== '') {
       style = document.createElement('style');
-      style.id = 'plugNmeetCustomization';
+      style.id = 'WeMeetCustomization';
       style.textContent = css;
       head.appendChild(style);
     }

@@ -4,12 +4,12 @@ import { toast } from 'react-toastify';
 import {
   ApproveWaitingUsersReqSchema,
   CommonResponseSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { useAppSelector } from '../../../store';
 import { participantsSelector } from '../../../store/slices/participantSlice';
-import sendAPIRequest from '../../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../../helpers/api/WeMeetAPI';
 
 interface IWaitingApprovalProps {
   userId: string;

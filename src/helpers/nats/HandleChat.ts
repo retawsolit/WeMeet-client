@@ -1,4 +1,4 @@
-import { ChatMessage } from 'plugnmeet-protocol-js';
+import { ChatMessage } from 'wemeet-protocol-js';
 import { toast } from 'react-toastify';
 
 import ConnectNats from './ConnectNats';

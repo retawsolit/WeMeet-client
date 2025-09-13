@@ -8,7 +8,7 @@ import {
   NatsSystemNotificationTypes,
   GenerateAzureTokenResSchema,
   ChatMessageSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 
 import { store } from '../../store';
 import {

@@ -11,7 +11,7 @@ import {
   VerifyTokenReqSchema,
   VerifyTokenRes,
   VerifyTokenResSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import ErrorPage, { IErrorPageProps } from '../extra-pages/Error';
@@ -20,7 +20,7 @@ import Footer from '../footer';
 import Header from '../header';
 import MainArea from '../main-area';
 
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 import { store, useAppDispatch, useAppSelector } from '../../store';
 import { addServerVersion, addToken } from '../../store/slices/sessionSlice';
 import StartupJoinModal from './joinModal';
@@ -209,7 +209,7 @@ const App = () => {
   const renderMainApp = useCallback(() => {
     if (currentMediaServerConn) {
       return (
-        <div className="plugNmeet-app overflow-hidden h-screen">
+        <div className="WeMeet-app overflow-hidden h-screen">
           {!isRecorder ? <Header /> : null}
           <MainArea />
           <Footer />

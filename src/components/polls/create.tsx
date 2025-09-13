@@ -7,7 +7,7 @@ import {
 } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { CreatePollReqSchema } from 'plugnmeet-protocol-js';
+import { CreatePollReqSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { useCreatePollMutation } from '../../store/services/pollsApi';

@@ -5,7 +5,7 @@ import Resumable from 'resumablejs';
 import ResumableFile = Resumable.ResumableFile;
 
 import { store } from '../../store';
-import sendAPIRequest from '../api/plugNmeetAPI';
+import sendAPIRequest from '../api/WeMeetAPI';
 
 export interface IUseResumableFilesUpload {
   allowedFileTypes: Array<string>;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChatMessage } from 'plugnmeet-protocol-js';
+import { ChatMessage } from 'wemeet-protocol-js';
 
 import { ICurrentUser } from '../../../../store/slices/interfaces/session';
 import { useAppSelector } from '../../../../store';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useVirtual from 'react-cool-virtual';
-import { PollInfo } from 'plugnmeet-protocol-js';
+import { PollInfo } from 'wemeet-protocol-js';
 
 import { useGetPollListsQuery } from '../../store/services/pollsApi';
 import Poll from './poll';

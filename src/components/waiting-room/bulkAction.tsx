@@ -2,13 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IParticipant } from '../../store/slices/interfaces/participant';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 import { toast } from 'react-toastify';
 import {
   ApproveWaitingUsersReqSchema,
   CommonResponseSchema,
   RemoveParticipantReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { store } from '../../store';

@@ -9,7 +9,7 @@ import {
 } from '@headlessui/react';
 import { toast } from 'react-toastify';
 import copy from 'copy-text-to-clipboard';
-import { JoinBreakoutRoomReqSchema } from 'plugnmeet-protocol-js';
+import { JoinBreakoutRoomReqSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { useAppDispatch, useAppSelector } from '../../store';

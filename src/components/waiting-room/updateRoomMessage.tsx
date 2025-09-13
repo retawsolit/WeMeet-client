@@ -5,11 +5,11 @@ import { toast } from 'react-toastify';
 import {
   CommonResponseSchema,
   UpdateWaitingRoomMessageReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import { useAppSelector } from '../../store';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 
 const UpdateRoomMessage = () => {
   const { t } = useTranslation();

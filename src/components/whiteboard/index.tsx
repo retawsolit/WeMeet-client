@@ -550,7 +550,7 @@ const Whiteboard = ({ onReadyExcalidrawAPI }: WhiteboardProps) => {
           viewModeEnabled={viewModeEnabled}
           isCollaborating={true}
           theme={theme}
-          name="plugNmeet whiteboard"
+          name="WeMeet whiteboard"
           UIOptions={{
             canvasActions: {
               loadScene: false,

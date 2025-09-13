@@ -1,4 +1,4 @@
-import { DataChannelMessage, DataMsgBodyType } from 'plugnmeet-protocol-js';
+import { DataChannelMessage, DataMsgBodyType } from 'wemeet-protocol-js';
 import { ConnectionQuality } from 'livekit-client';
 
 import ConnectNats from './ConnectNats';

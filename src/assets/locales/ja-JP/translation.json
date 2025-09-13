@@ -6,7 +6,7 @@
   "no": "いいえ",
   "join": "参加",
   "share": "共有",
-  "plugnmeet-server-client-version": "サーバー: v{{server}}; クライアント: v{{client}}",
+  "wemeet-server-client-version": "サーバー: v{{server}}; クライアント: v{{client}}",
   "open": "開く",
   "please-wait": "お待ちください...",
   "are-you-sure-to-close": "お締めしてもよろしいですか?",

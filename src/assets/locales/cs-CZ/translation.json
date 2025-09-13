@@ -6,7 +6,7 @@
   "no": "Ne",
   "join": "Připojit",
   "share": "Sdílet",
-  "plugnmeet-server-client-version": "Server: v{{server}}; Klient: v{{client}}",
+  "wemeet-server-client-version": "Server: v{{server}}; Klient: v{{client}}",
   "open": "Otevřený",
   "please-wait": "Počkejte prosím...",
   "are-you-sure-to-close": "Opravdu se chystáte zavřít?",

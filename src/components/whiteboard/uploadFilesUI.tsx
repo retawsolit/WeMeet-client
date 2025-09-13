@@ -11,7 +11,7 @@ import {
 } from '../../store/slices/interfaces/whiteboard';
 import { addWhiteboardOtherImageFile } from '../../store/slices/whiteboard';
 import { randomString, sleep } from '../../helpers/utils';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 import { broadcastWhiteboardOfficeFile } from './helpers/handleRequestedWhiteboardData';
 import useResumableFilesUpload from '../../helpers/hooks/useResumableFilesUpload';
 import { ExcalidrawImperativeAPI } from '@excalidraw/excalidraw/types/types';
@@ -19,7 +19,7 @@ import {
   AnalyticsEvents,
   AnalyticsEventType,
   DataMsgBodyType,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 
 import useStorePreviousInt from '../../helpers/hooks/useStorePreviousInt';
 import {

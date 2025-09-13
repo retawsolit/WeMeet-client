@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { EndBreakoutRoomReqSchema } from 'plugnmeet-protocol-js';
+import { EndBreakoutRoomReqSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { useEndSingleRoomMutation } from '../../../../store/services/breakoutRoomApi';

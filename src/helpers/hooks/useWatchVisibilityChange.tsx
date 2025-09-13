@@ -3,7 +3,7 @@ import {
   AnalyticsEvents,
   AnalyticsEventType,
   DataMsgBodyType,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { useDispatch } from 'react-redux';
 
 import { getNatsConn } from '../nats';

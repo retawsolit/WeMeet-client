@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 import { useAppSelector } from '../../store';
-import { DataMsgBodyType } from 'plugnmeet-protocol-js';
+import { DataMsgBodyType } from 'wemeet-protocol-js';
 import { getNatsConn } from '../../helpers/nats';
 
 interface IReactPlayerComponentProps {

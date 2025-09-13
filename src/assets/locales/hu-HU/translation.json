@@ -6,7 +6,7 @@
   "no": "Nem",
   "join": "Csatlakozik",
   "share": "Részvény",
-  "plugnmeet-server-client-version": "Szerver: v{{server}}; Ügyfél: v{{client}}",
+  "wemeet-server-client-version": "Szerver: v{{server}}; Ügyfél: v{{client}}",
   "open": "Nyitott",
   "please-wait": "Várj, kérlek...",
   "are-you-sure-to-close": "Biztosan bezár?",

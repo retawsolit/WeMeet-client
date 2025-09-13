@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-import { AnalyticsEvents, AnalyticsEventType } from 'plugnmeet-protocol-js';
+import { AnalyticsEvents, AnalyticsEventType } from 'wemeet-protocol-js';
 
 import { store, useAppSelector } from '../../../store';
 import useResumableFilesUpload from '../../../helpers/hooks/useResumableFilesUpload';

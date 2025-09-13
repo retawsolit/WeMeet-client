@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { create } from '@bufbuild/protobuf';
-import { JoinBreakoutRoomReqSchema } from 'plugnmeet-protocol-js';
+import { JoinBreakoutRoomReqSchema } from 'wemeet-protocol-js';
 
 import { useJoinRoomMutation } from '../../../../store/services/breakoutRoomApi';
 import { store } from '../../../../store';

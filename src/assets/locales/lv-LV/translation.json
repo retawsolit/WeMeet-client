@@ -6,7 +6,7 @@
   "no": "Nē",
   "join": "Pievienoties",
   "share": "Koplietot",
-  "plugnmeet-server-client-version": "Serveris: v{{server}}; Klients: v{{client}}",
+  "wemeet-server-client-version": "Serveris: v{{server}}; Klients: v{{client}}",
   "open": "Atvērts",
   "please-wait": "Lūdzu, gaidi...",
   "are-you-sure-to-close": "Vai tiešām aizvērsiet?",

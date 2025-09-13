@@ -5,7 +5,7 @@ import {
   CommonResponseSchema,
   SwitchPresenterReqSchema,
   SwitchPresenterTask,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
 import usePreviousPage from './helpers/hooks/usePreviousPage';
@@ -13,7 +13,7 @@ import { store, useAppDispatch, useAppSelector } from '../../store';
 import { setWhiteboardCurrentPage } from '../../store/slices/whiteboard';
 import { useTranslation } from 'react-i18next';
 import { broadcastCurrentPageNumber } from './helpers/handleRequestedWhiteboardData';
-import sendAPIRequest from '../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../helpers/api/WeMeetAPI';
 import usePreviousFileId from './helpers/hooks/usePreviousFileId';
 import { displaySavedPageData, savePageData } from './helpers/utils';
 

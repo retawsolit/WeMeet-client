@@ -6,7 +6,7 @@
   "no": "Nei",
   "join": "Forene",
   "share": "Aksje",
-  "plugnmeet-server-client-version": "Tjener: v{{server}}; Oppdragsgiver: v{{client}}",
+  "wemeet-server-client-version": "Tjener: v{{server}}; Oppdragsgiver: v{{client}}",
   "open": "Åpen",
   "please-wait": "Vent...",
   "are-you-sure-to-close": "Er du sikker på å stenge?",

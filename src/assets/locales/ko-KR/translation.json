@@ -6,7 +6,7 @@
   "no": "아니요",
   "join": "잇다",
   "share": "공유",
-  "plugnmeet-server-client-version": "서버: v{{server}}; 클라이언트: v{{client}}",
+  "wemeet-server-client-version": "서버: v{{server}}; 클라이언트: v{{client}}",
   "open": "열다",
   "please-wait": "기다리세요...",
   "are-you-sure-to-close": "닫으시겠습니까?",

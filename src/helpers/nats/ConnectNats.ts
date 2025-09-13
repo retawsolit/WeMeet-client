@@ -17,7 +17,7 @@ import {
   NatsMsgServerToClientEvents,
   NatsMsgServerToClientSchema,
   NatsSubjects,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import {
   create,
   fromBinary,

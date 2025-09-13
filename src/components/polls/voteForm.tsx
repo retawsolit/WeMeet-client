@@ -11,7 +11,7 @@ import { create } from '@bufbuild/protobuf';
 import {
   DataMsgBodyType,
   SubmitPollResponseReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 
 import {
   useAddResponseMutation,

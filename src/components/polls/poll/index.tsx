@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PollInfo } from 'plugnmeet-protocol-js';
+import { PollInfo } from 'wemeet-protocol-js';
 
 import TotalResponses from './totalResponses';
 import MyVoteStatus from './myVoteStatus';

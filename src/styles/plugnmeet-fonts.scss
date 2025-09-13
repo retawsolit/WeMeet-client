@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'plugnmeet';
-  src: url('../assets/fonts/plugnmeet.ttf') format('truetype');
-  src: url('../assets/fonts/plugnmeet.woff') format('woff');
+  font-family: 'wemeet';
+  src: url('../assets/fonts/wemeet.ttf') format('truetype');
+  src: url('../assets/fonts/wemeet.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -18,7 +18,7 @@
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'plugnmeet' !important;
+  font-family: 'wemeet' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;

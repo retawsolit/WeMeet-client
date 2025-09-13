@@ -22,10 +22,10 @@ import {
   AzureTokenRenewReqSchema,
   SpeechServiceUserStatusReqSchema,
   SpeechToTextTranslationReqSchema,
-} from 'plugnmeet-protocol-js';
+} from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
-import sendAPIRequest from '../../../helpers/api/plugNmeetAPI';
+import sendAPIRequest from '../../../helpers/api/WeMeetAPI';
 import { store } from '../../../store';
 import { SpeechTextBroadcastFormat } from '../../../store/slices/interfaces/speechServices';
 import { ISession } from '../../../store/slices/interfaces/session';
