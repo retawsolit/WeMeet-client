@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { EndBreakoutRoomReqSchema } from 'wemeet-protocol-js';
+import {
+  EndBreakoutRoomReq,
+  EndBreakoutRoomReqSchema,
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { useEndSingleRoomMutation } from '../../../../store/services/breakoutRoomApi';
@@ -34,7 +37,11 @@ const EndBtn = ({ breakoutRoomId }: IEndBtnProps) => {
   }, [data]);
 
   const endRoom = () => {
-    endSingleRoom(create(EndBreakoutRoomReqSchema, { breakoutRoomId }));
+    endSingleRoom(
+      create(EndBreakoutRoomReqSchema, {
+        breakoutRoomId,
+      }) as EndBreakoutRoomReq,
+    );
   };
 
   return (

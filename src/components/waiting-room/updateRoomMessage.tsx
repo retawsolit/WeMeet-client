@@ -4,6 +4,7 @@ import { isEmpty } from 'lodash';
 import { toast } from 'react-toastify';
 import {
   CommonResponseSchema,
+  CommonResponse,
   UpdateWaitingRoomMessageReqSchema,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
@@ -35,7 +36,10 @@ const UpdateRoomMessage = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('waiting-room.updated-msg'), {

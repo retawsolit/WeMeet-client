@@ -10,7 +10,11 @@ import {
 } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { SpeechToTextTranslationReqSchema } from 'wemeet-protocol-js';
+import {
+  SpeechToTextTranslationReqSchema,
+  SpeechToTextTranslationReq,
+  CommonResponse,
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { updateDisplaySpeechSettingsModal } from '../../../store/slices/bottomIconsActivitySlice';
@@ -91,9 +95,9 @@ const SpeechServiceSettingsModal = () => {
       isEnabledTranslation: enableTranslation,
       allowedTransLangs: selectedTransLangs,
       defaultSubtitleLang: selectedDefaultSubtitleLang,
-    });
+    }) as SpeechToTextTranslationReq;
 
-    const res = await enableOrDisableSpeechService(body);
+    const res = (await enableOrDisableSpeechService(body)) as CommonResponse;
 
     if (res.status) {
       toast(t('speech-services.service-ready'), {
@@ -116,8 +120,8 @@ const SpeechServiceSettingsModal = () => {
       allowedSpeechUsers: [],
       isEnabledTranslation: false,
       allowedTransLangs: [],
-    });
-    const res = await enableOrDisableSpeechService(body);
+    }) as SpeechToTextTranslationReq;
+    const res = (await enableOrDisableSpeechService(body)) as CommonResponse;
 
     if (res.status) {
       toast(t('speech-services.service-stopped'), {

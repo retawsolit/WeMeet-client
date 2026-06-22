@@ -77,16 +77,19 @@ const App = () => {
         title: t('app.token-missing-title'),
         text: t('app.token-missing-des'),
       });
-    } else if (
-      window.location.protocol === 'http:' &&
-      window.location.hostname !== 'localhost'
-    ) {
-      setLoading(false);
-      setError({
-        title: t('app.require-ssl-title'),
-        text: t('app.require-ssl-des'),
-      });
-    } else {
+    }
+
+    // else if (
+    //   window.location.protocol === 'http:' &&
+    //   window.location.hostname !== 'localhost'
+    // ) {
+    //   setLoading(false);
+    //   setError({
+    //     title: t('app.require-ssl-title'),
+    //     text: t('app.require-ssl-des'),
+    //   });
+    // }
+    else {
       const verifyToken = async () => {
         let res: VerifyTokenRes;
         try {
@@ -102,7 +105,10 @@ const App = () => {
             'application/protobuf',
             'arraybuffer',
           );
-          res = fromBinary(VerifyTokenResSchema, new Uint8Array(r));
+          res = fromBinary(
+            VerifyTokenResSchema,
+            new Uint8Array(r),
+          ) as VerifyTokenRes;
         } catch (error: any) {
           console.error(error);
 

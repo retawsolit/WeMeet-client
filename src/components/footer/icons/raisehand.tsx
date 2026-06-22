@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
+  NatsMsgClientToServer,
   NatsMsgClientToServerEvents,
   NatsMsgClientToServerSchema,
 } from 'wemeet-protocol-js';
@@ -28,7 +29,10 @@ const RaiseHandIcon = () => {
   }, [isActiveRaisehand]);
 
   const toggleRaiseHand = async () => {
-    const data = create(NatsMsgClientToServerSchema, {});
+    const data = create(
+      NatsMsgClientToServerSchema,
+      {},
+    ) as NatsMsgClientToServer;
 
     if (!isActiveRaisehand) {
       data.event = NatsMsgClientToServerEvents.REQ_RAISE_HAND;

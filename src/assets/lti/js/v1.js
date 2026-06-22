@@ -55,7 +55,7 @@ window.addEventListener('load', async () => {
 const joinSession = async () => {
   const res = await sendAPIRequest('/room/join', {});
   if (res.status) {
-    let url = window.PLUG_N_MEET_SERVER_URL + '/?access_token=' + res.token;
+    let url = window.WEMEET_SERVER_URL + '/?access_token=' + res.token;
     if (typeof window.DESIGN_CUSTOMIZATION !== 'undefined') {
       url +=
         '&custom_design=' + encodeURIComponent(window.DESIGN_CUSTOMIZATION);
@@ -127,7 +127,7 @@ const downloadRecording = async (e) => {
 
   if (res.status) {
     const url =
-      window.PLUG_N_MEET_SERVER_URL + '/download/recording/' + res.token;
+      window.WEMEET_SERVER_URL + '/download/recording/' + res.token;
     window.open(url, '_blank');
   } else {
     alert(res.msg);
@@ -154,7 +154,7 @@ const deleteRecording = async (e) => {
 };
 
 const sendAPIRequest = async (path, body) => {
-  const url = window.PLUG_N_MEET_SERVER_URL + '/lti/v1/api' + path;
+  const url = window.WEMEET_SERVER_URL + '/lti/v1/api' + path;
   const output = {
     status: false,
     msg: '',

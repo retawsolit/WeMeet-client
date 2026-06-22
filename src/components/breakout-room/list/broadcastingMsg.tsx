@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBroadcastBreakoutRoomMsgMutation } from '../../../store/services/breakoutRoomApi';
 import { toast } from 'react-toastify';
-import { BroadcastBreakoutRoomMsgReqSchema } from 'wemeet-protocol-js';
+import {
+  BroadcastBreakoutRoomMsgReq,
+  BroadcastBreakoutRoomMsgReqSchema,
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 const BroadcastingMsg = () => {
@@ -39,7 +42,7 @@ const BroadcastingMsg = () => {
     broadcastMsg(
       create(BroadcastBreakoutRoomMsgReqSchema, {
         msg,
-      }),
+      }) as BroadcastBreakoutRoomMsgReq,
     );
   };
 

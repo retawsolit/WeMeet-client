@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import {
   BreakoutRoom,
   BreakoutRoomSchema,
+  CreateBreakoutRoomsReq,
   CreateBreakoutRoomsReqSchema,
 } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
@@ -199,7 +200,7 @@ const FromElems = () => {
             duration: String(roomDuration),
             started: false,
             created: String(Date.now()),
-          });
+          }) as BreakoutRoom;
           tmp.push(room);
         }
       }
@@ -216,7 +217,7 @@ const FromElems = () => {
       duration: String(roomDuration),
       welcomeMsg: welcomeMsg,
       rooms: tmp,
-    });
+    }) as CreateBreakoutRoomsReq;
     createBreakoutRoom(req);
   };
 

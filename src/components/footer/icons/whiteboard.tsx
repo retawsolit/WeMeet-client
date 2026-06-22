@@ -91,7 +91,7 @@ const WhiteboardIcon = () => {
       const body = create(ChangeVisibilityResSchema, {
         roomId: currentRoom.roomId,
         visibleWhiteBoard: true,
-      });
+      }) as ChangeVisibilityRes;
       // wait little bit before change visibility
       setTimeout(() => {
         sendRequest(body).then();
@@ -103,7 +103,7 @@ const WhiteboardIcon = () => {
       const body = create(ChangeVisibilityResSchema, {
         roomId: currentRoom.roomId,
         visibleWhiteBoard: false,
-      });
+      }) as ChangeVisibilityRes;
       sendRequest(body).then();
     }
     //eslint-disable-next-line

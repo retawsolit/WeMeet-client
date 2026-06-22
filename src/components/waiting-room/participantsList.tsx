@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import {
   ApproveWaitingUsersReqSchema,
   CommonResponseSchema,
+  CommonResponse,
   RemoveParticipantReqSchema,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
@@ -31,7 +32,10 @@ const ParticipantsList = ({ waitingParticipants }: IParticipantsListProps) => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('left-panel.menus.notice.user-approved', { name: name }), {
@@ -61,7 +65,10 @@ const ParticipantsList = ({ waitingParticipants }: IParticipantsListProps) => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('left-panel.menus.notice.participant-removed'), {

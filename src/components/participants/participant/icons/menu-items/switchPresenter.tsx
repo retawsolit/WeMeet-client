@@ -6,6 +6,7 @@ import {
   CommonResponseSchema,
   SwitchPresenterReqSchema,
   SwitchPresenterTask,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -39,7 +40,10 @@ const SwitchPresenterMenuItem = ({ userId }: ISwitchPresenterMenuItemProps) => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('left-panel.menus.notice.presenter-changed'), {

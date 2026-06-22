@@ -3,6 +3,8 @@ import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import {
   CommonResponseSchema,
+  CommonResponse,
+  RecordingReq,
   RecordingReqSchema,
   RecordingTasks,
 } from 'wemeet-protocol-js';
@@ -22,7 +24,7 @@ const useCloudRecording = (): IUseCloudRecordingReturn => {
     const body = create(RecordingReqSchema, {
       task: RecordingTasks.START_RECORDING,
       sid: currentRoom.sid,
-    });
+    }) as RecordingReq;
     if (typeof (window as any).DESIGN_CUSTOMIZATION !== 'undefined') {
       body.customDesign = `${(window as any).DESIGN_CUSTOMIZATION}`.replace(
         /\s/g,
@@ -36,7 +38,10 @@ const useCloudRecording = (): IUseCloudRecordingReturn => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
     let msg = 'footer.notice.start-recording-progress';
     if (!res.status) {
       setHasError(true);
@@ -61,7 +66,10 @@ const useCloudRecording = (): IUseCloudRecordingReturn => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
     let msg = 'footer.notice.stop-recording-service-in-progress';
 
     if (!res.status) {

@@ -359,7 +359,7 @@ const Whiteboard = ({ onReadyExcalidrawAPI }: WhiteboardProps) => {
 
       for (const file of files) {
         const url =
-          (window as any).PLUG_N_MEET_SERVER_URL +
+          (window as any).WEMEET_SERVER_URL +
           '/download/uploadedFile/' +
           file.filePath;
 

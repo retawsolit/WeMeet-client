@@ -5,6 +5,7 @@ import {
   CommonResponseSchema,
   ExternalMediaPlayerReqSchema,
   ExternalMediaPlayerTask,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -47,7 +48,10 @@ const Upload = () => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CommonResponseSchema,
+        new Uint8Array(r),
+      ) as CommonResponse;
 
       if (!res.status) {
         toast.update(id, {
@@ -64,7 +68,7 @@ const Upload = () => {
 
     if (result && result.filePath) {
       const playback =
-        (window as any).PLUG_N_MEET_SERVER_URL +
+        (window as any).WEMEET_SERVER_URL +
         '/download/uploadedFile/' +
         result.filePath;
 

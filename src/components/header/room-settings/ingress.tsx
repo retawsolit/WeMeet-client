@@ -6,6 +6,7 @@ import {
   CreateIngressReqSchema,
   CreateIngressResSchema,
   IngressInput,
+  CreateIngressRes,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -66,7 +67,10 @@ const Ingress = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CreateIngressResSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CreateIngressResSchema,
+      new Uint8Array(r),
+    ) as CreateIngressRes;
     if (!res.status) {
       toast(t(res.msg), {
         type: 'error',

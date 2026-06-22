@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import {
   CommonResponseSchema,
+  CommonResponse,
   ExternalDisplayLinkReqSchema,
   ExternalDisplayLinkTask,
 } from 'wemeet-protocol-js';
@@ -84,7 +85,10 @@ const DisplayExternalLinkModal = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (!res.status) {
       toast.update(id, {

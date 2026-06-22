@@ -1,8 +1,10 @@
 import { toast } from 'react-toastify';
 import {
   RoomMetadataSchema,
+  RoomMetadata,
   NatsKvRoomInfo,
   ChatMessageSchema,
+  ChatMessage,
 } from 'wemeet-protocol-js';
 import { create, fromJsonString } from '@bufbuild/protobuf';
 
@@ -44,7 +46,7 @@ export default class HandleRoomData {
 
   public updateRoomMetadata = async (data: string) => {
     try {
-      const metadata = fromJsonString(RoomMetadataSchema, data);
+      const metadata = fromJsonString(RoomMetadataSchema, data) as RoomMetadata;
       if (
         typeof this._room.metadata === 'undefined' ||
         this._room.metadata.metadataId !== metadata.metadataId
@@ -135,7 +137,7 @@ export default class HandleRoomData {
       fromUserId: 'system',
       message: this.welcomeMessage,
       fromAdmin: true, // system message always from admin
-    });
+    }) as ChatMessage;
 
     store.dispatch(addChatMessage(body));
   };

@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import {
   CommonResponseSchema,
   UpdateUserLockSettingsReqSchema,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -46,7 +47,10 @@ const LockSettingsModal = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('footer.notice.applied-settings'), {
@@ -159,6 +163,7 @@ const LockSettingsModal = () => {
           </Switch>
         </div>
 
+        {/*
         <div className="flex items-center justify-between mb-4">
           <Label className="ltr:pr-4 rtl:pl-4 w-full dark:text-darkText ltr:text-left rtl:text-right">
             {t('footer.modal.lock-shared-notepad')}
@@ -181,6 +186,7 @@ const LockSettingsModal = () => {
             />
           </Switch>
         </div>
+        */}
 
         <div className="flex items-center justify-between mb-4">
           <Label className="ltr:pr-4 rtl:pl-4 w-full dark:text-darkText ltr:text-left rtl:text-right">

@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import {
   ApproveWaitingUsersReqSchema,
   CommonResponseSchema,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -39,7 +40,10 @@ const WaitingApproval = ({
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('left-panel.menus.notice.user-approved', { name: name }), {

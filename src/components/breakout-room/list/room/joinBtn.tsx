@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { create } from '@bufbuild/protobuf';
-import { JoinBreakoutRoomReqSchema } from 'wemeet-protocol-js';
+import {
+  JoinBreakoutRoomReq,
+  JoinBreakoutRoomReqSchema,
+} from 'wemeet-protocol-js';
 
 import { useJoinRoomMutation } from '../../../../store/services/breakoutRoomApi';
 import { store } from '../../../../store';
@@ -62,7 +65,7 @@ const JoinBtn = ({ breakoutRoomId }: IJoinBtnProps) => {
       create(JoinBreakoutRoomReqSchema, {
         breakoutRoomId: breakoutRoomId,
         userId: store.getState().session.currentUser?.userId ?? '',
-      }),
+      }) as JoinBreakoutRoomReq,
     );
   };
 

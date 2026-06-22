@@ -7,6 +7,7 @@ import {
   CommonResponseSchema,
   ExternalMediaPlayerReqSchema,
   ExternalMediaPlayerTask,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -66,7 +67,10 @@ const DirectLink = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (!res.status) {
       toast.update(id, {

@@ -3,6 +3,7 @@ import { MenuItem } from '@headlessui/react';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import {
+  CommonResponse,
   CommonResponseSchema,
   UpdateUserLockSettingsReqSchema,
 } from 'wemeet-protocol-js';
@@ -72,7 +73,10 @@ const LockSettingMenuItem = ({ userId }: ILockSettingMenuItemProps) => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('left-panel.menus.notice.applied-new-setting'), {
@@ -155,6 +159,7 @@ const LockSettingMenuItem = ({ userId }: ILockSettingMenuItemProps) => {
           </div>
         ) : null}
 
+        {/*
         {roomFeatures?.sharedNotePadFeatures?.allowedSharedNotePad ? (
           <div className="" role="none">
             <MenuItem>
@@ -171,6 +176,7 @@ const LockSettingMenuItem = ({ userId }: ILockSettingMenuItemProps) => {
             </MenuItem>
           </div>
         ) : null}
+        */}
 
         {roomFeatures?.chatFeatures?.allowChat ? (
           <>

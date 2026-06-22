@@ -6,6 +6,7 @@ import {
 import {
   NatsKvUserInfo,
   NatsKvUserInfoSchema,
+  NatsUserMetadataUpdate,
   NatsUserMetadataUpdateSchema,
   UserMetadata,
   UserMetadataSchema,
@@ -83,7 +84,7 @@ export default class HandleParticipants {
     let participant: NatsKvUserInfo;
     if (typeof p === 'string') {
       try {
-        participant = fromJsonString(NatsKvUserInfoSchema, p);
+        participant = fromJsonString(NatsKvUserInfoSchema, p) as NatsKvUserInfo;
       } catch (e) {
         console.error(e);
         return;
@@ -169,7 +170,10 @@ export default class HandleParticipants {
 
   public handleParticipantMetadataUpdate = async (d: string) => {
     try {
-      const data = fromJsonString(NatsUserMetadataUpdateSchema, d);
+      const data = fromJsonString(
+        NatsUserMetadataUpdateSchema,
+        d,
+      ) as NatsUserMetadataUpdate;
       await this.updateParticipantMetadata(data.userId, data.metadata);
     } catch (e) {
       console.error(e);
@@ -223,7 +227,10 @@ export default class HandleParticipants {
   public handleParticipantDisconnected = (data: string) => {
     let participant: NatsKvUserInfo;
     try {
-      participant = fromJsonString(NatsKvUserInfoSchema, data);
+      participant = fromJsonString(
+        NatsKvUserInfoSchema,
+        data,
+      ) as NatsKvUserInfo;
     } catch (e) {
       console.error(e);
       return;
@@ -254,7 +261,7 @@ export default class HandleParticipants {
   public handleParticipantOffline = (data: string) => {
     let p: NatsKvUserInfo;
     try {
-      p = fromJsonString(NatsKvUserInfoSchema, data);
+      p = fromJsonString(NatsKvUserInfoSchema, data) as NatsKvUserInfo;
     } catch (e) {
       console.error(e);
       return;
@@ -281,7 +288,7 @@ export default class HandleParticipants {
 
   private decodeMetadata(data: string): ICurrentUserMetadata {
     try {
-      return fromJsonString(UserMetadataSchema, data);
+      return fromJsonString(UserMetadataSchema, data) as UserMetadata;
     } catch (e) {
       console.error(e);
     }
@@ -303,7 +310,7 @@ export default class HandleParticipants {
         lockWhiteboard: true,
         lockSharedNotepad: true,
       },
-    });
+    }) as UserMetadata;
   }
 
   private notificationForWaitingUser(

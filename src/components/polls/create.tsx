@@ -7,7 +7,7 @@ import {
 } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { CreatePollReqSchema } from 'wemeet-protocol-js';
+import { CreatePollReqSchema, CreatePollReq } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { useCreatePollMutation } from '../../store/services/pollsApi';
@@ -71,7 +71,7 @@ const Create = () => {
     const body = create(CreatePollReqSchema, {
       question,
       options,
-    });
+    }) as CreatePollReq;
     createPoll(body);
   };
 

@@ -1,16 +1,6 @@
-window.PLUG_N_MEET_SERVER_URL = 'http://localhost:8080';
+window.WEMEET_SERVER_URL = 'http://10.238.51.41:8080';
 
-// this is helpful for external plugin development where images or other files located
-// in another place.
-// window.STATIC_ASSETS_PATH = '';
 
-// Custom logo. For best, use a direct https link
-/*window.CUSTOM_LOGO = {
-  main_logo_light: 'https://mydomain.com/logo_light.png',
-  main_logo_dark: 'https://mydomain.com/logo_dark.png',
-  waiting_room_logo_light: '',
-  waiting_room_logo_dark: '',
-};*/
 
 //With Dynacast dynamically pauses video layers that are not being consumed by any subscribers, significantly reducing publishing CPU and bandwidth usage.
 window.ENABLE_DYNACAST = true;

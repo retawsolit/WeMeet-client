@@ -7,7 +7,9 @@ import { toast } from 'react-toastify';
 import {
   ApproveWaitingUsersReqSchema,
   CommonResponseSchema,
+  CommonResponse,
   RemoveParticipantReqSchema,
+  RemoveParticipantReq,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -33,7 +35,10 @@ const BulkAction = ({ waitingParticipants }: IBulkActionProps) => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CommonResponseSchema,
+        new Uint8Array(r),
+      ) as CommonResponse;
 
       if (!res.status) {
         toast(t(res.msg), {
@@ -48,7 +53,7 @@ const BulkAction = ({ waitingParticipants }: IBulkActionProps) => {
     const body = create(RemoveParticipantReqSchema, {
       sid: session.currentRoom.sid,
       roomId: session.currentRoom.roomId,
-    });
+    }) as RemoveParticipantReq;
     waitingParticipants.forEach(async (p) => {
       body.userId = p.userId;
       body.msg = t('notifications.you-have-reject');
@@ -61,7 +66,10 @@ const BulkAction = ({ waitingParticipants }: IBulkActionProps) => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CommonResponseSchema,
+        new Uint8Array(r),
+      ) as CommonResponse;
 
       if (!res.status) {
         toast(t(res.msg), {

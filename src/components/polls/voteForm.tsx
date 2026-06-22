@@ -11,6 +11,7 @@ import { create } from '@bufbuild/protobuf';
 import {
   DataMsgBodyType,
   SubmitPollResponseReqSchema,
+  SubmitPollResponseReq,
 } from 'wemeet-protocol-js';
 
 import {
@@ -70,7 +71,7 @@ const VoteForm = ({ onCloseForm, pollId }: IVoteFormProps) => {
         userId: store.getState().session.currentUser?.userId ?? '',
         name: store.getState().session.currentUser?.name ?? '',
         selectedOption: `${selectedOption}`,
-      }),
+      }) as SubmitPollResponseReq,
     );
 
     // notify to everyone

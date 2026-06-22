@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { JoinBreakoutRoomReqSchema } from 'wemeet-protocol-js';
+import {
+  JoinBreakoutRoomReq,
+  JoinBreakoutRoomReqSchema,
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import {
@@ -55,7 +58,7 @@ const MyBreakoutRooms = () => {
       create(JoinBreakoutRoomReqSchema, {
         breakoutRoomId: myRooms?.room?.id ?? '',
         userId: store.getState().session.currentUser?.userId ?? '',
-      }),
+      }) as JoinBreakoutRoomReq,
     );
   };
 

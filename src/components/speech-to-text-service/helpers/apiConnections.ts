@@ -22,6 +22,7 @@ import {
   AzureTokenRenewReqSchema,
   SpeechServiceUserStatusReqSchema,
   SpeechToTextTranslationReqSchema,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -123,10 +124,10 @@ export const openConnectionWithAzure = (
 
   recognizer.sessionStarted = async () => {
     setOptionSelectionDisabled(false);
-    const res = await sendUserSessionStatus(
+    const res = (await sendUserSessionStatus(
       SpeechServiceUserStatusTasks.SPEECH_TO_TEXT_SESSION_STARTED,
       azureInfo.keyId,
-    );
+    )) as CommonResponse;
     if (!res.status) {
       toast(i18n.t('speech-services.status-change-error', { error: res.msg }), {
         type: 'error',

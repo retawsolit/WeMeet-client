@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RoomMetadataSchema } from 'wemeet-protocol-js';
+import { RoomMetadata, RoomMetadataSchema } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import {
@@ -108,7 +108,7 @@ const initialState: ISession = {
         display: true,
         text: 'Powered by <a href="https://www.wemeet.org" target="_blank">WeMeet</a>',
       },
-    }),
+    }) as RoomMetadata,
   },
 };
 

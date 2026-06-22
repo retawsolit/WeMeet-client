@@ -4,9 +4,12 @@ import { create, fromJsonString } from '@bufbuild/protobuf';
 import {
   NatsMsgServerToClient,
   NatsMsgServerToClientEvents,
+  NatsSystemNotification,
   NatsSystemNotificationSchema,
   NatsSystemNotificationTypes,
+  GenerateAzureTokenRes,
   GenerateAzureTokenResSchema,
+  ChatMessage,
   ChatMessageSchema,
 } from 'wemeet-protocol-js';
 
@@ -31,7 +34,10 @@ export default class HandleSystemData {
    * @param data
    */
   public handleNotification = (data: string) => {
-    const nt = fromJsonString(NatsSystemNotificationSchema, data);
+    const nt = fromJsonString(
+      NatsSystemNotificationSchema,
+      data,
+    ) as NatsSystemNotification;
     switch (nt.type) {
       case NatsSystemNotificationTypes.NATS_SYSTEM_NOTIFICATION_INFO:
         displayInstantNotification(i18n.t(nt.msg), 'info');
@@ -55,7 +61,10 @@ export default class HandleSystemData {
   };
 
   public handleAzureToken = (data: string) => {
-    const res = fromJsonString(GenerateAzureTokenResSchema, data);
+    const res = fromJsonString(
+      GenerateAzureTokenResSchema,
+      data,
+    ) as GenerateAzureTokenRes;
     if (res.status && res.token && res.keyId && res.serviceRegion) {
       store.dispatch(
         updateAzureTokenInfo({
@@ -143,7 +152,7 @@ export default class HandleSystemData {
       fromUserId: 'system',
       message: msg,
       fromAdmin: true, // system message always from admin
-    });
+    }) as ChatMessage;
 
     store.dispatch(addChatMessage(body));
   };

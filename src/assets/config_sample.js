@@ -1,4 +1,4 @@
-window.PLUG_N_MEET_SERVER_URL = 'http://localhost:8080';
+window.WEMEET_SERVER_URL = 'http://localhost:8080';
 
 // this is helpful for external plugin development where images or other files located
 // in another place.

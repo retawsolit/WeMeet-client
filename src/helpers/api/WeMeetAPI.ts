@@ -2,6 +2,7 @@ import axios, { AxiosError, ResponseType } from 'axios';
 import {
   CommonResponseSchema,
   NatsMsgClientToServerEvents,
+  NatsMsgClientToServer,
   NatsMsgClientToServerSchema,
 } from 'wemeet-protocol-js';
 import { create, toBinary } from '@bufbuild/protobuf';
@@ -11,7 +12,7 @@ import { store } from '../../store';
 import { getNatsConn } from '../nats';
 
 const API = axios.create({
-  baseURL: (window as any).PLUG_N_MEET_SERVER_URL + '/api',
+  baseURL: (window as any).WEMEET_SERVER_URL + '/api',
 });
 
 const getToken = () => {
@@ -33,7 +34,7 @@ export const requestToRenewPnmToken = () => {
         create(NatsMsgClientToServerSchema, {
           event: NatsMsgClientToServerEvents.REQ_RENEW_PNM_TOKEN,
           msg: token,
-        }),
+        }) as NatsMsgClientToServer,
       );
     }
   }

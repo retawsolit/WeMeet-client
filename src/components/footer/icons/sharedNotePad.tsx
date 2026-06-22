@@ -101,7 +101,7 @@ const SharedNotePadIcon = () => {
       const body = create(ChangeVisibilityResSchema, {
         roomId: currentRoom.roomId,
         visibleNotepad: true,
-      });
+      }) as ChangeVisibilityRes;
       // wait a little bit before change visibility
       setTimeout(() => {
         sendRequest(body).then();
@@ -113,7 +113,7 @@ const SharedNotePadIcon = () => {
       const body = create(ChangeVisibilityResSchema, {
         roomId: currentRoom.roomId,
         visibleNotepad: false,
-      });
+      }) as ChangeVisibilityRes;
       sendRequest(body).then();
     }
     //eslint-disable-next-line

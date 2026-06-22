@@ -4,12 +4,15 @@ import {
   AnalyticsEvents,
   AnalyticsEventType,
   ChatMessageSchema,
+  ChatMessage,
   DataChannelMessageSchema,
+  DataChannelMessage,
   DataMsgBodyType,
   MediaServerConnInfo,
   NatsInitialData,
   NatsInitialDataSchema,
   NatsKvUserInfoSchema,
+  NatsKvUserInfo,
   NatsMsgClientToServer,
   NatsMsgClientToServerEvents,
   NatsMsgClientToServerSchema,
@@ -189,7 +192,7 @@ export default class ConnectNats {
     this.sendMessageToSystemWorker(
       create(NatsMsgClientToServerSchema, {
         event: NatsMsgClientToServerEvents.REQ_INITIAL_DATA,
-      }),
+      }) as NatsMsgClientToServer,
     );
   };
 
@@ -353,7 +356,7 @@ export default class ConnectNats {
     const data = create(NatsMsgClientToServerSchema, {
       event: NatsMsgClientToServerEvents.PUSH_ANALYTICS_DATA,
       msg: toJsonString(AnalyticsDataMsgSchema, analyticsMsg),
-    });
+    }) as NatsMsgClientToServer;
     this.sendMessageToSystemWorker(data);
   };
 
@@ -420,7 +423,10 @@ export default class ConnectNats {
 
     for await (const m of sub) {
       try {
-        const payload = fromBinary(NatsMsgServerToClientSchema, m.data);
+        const payload = fromBinary(
+          NatsMsgServerToClientSchema,
+          m.data,
+        ) as NatsMsgServerToClient;
         if (payload.event === NatsMsgServerToClientEvents.SESSION_ENDED) {
           // otherwise if connection closed then ack will not process
           m.ack();
@@ -446,7 +452,10 @@ export default class ConnectNats {
 
     for await (const m of sub) {
       try {
-        const payload = fromBinary(NatsMsgServerToClientSchema, m.data);
+        const payload = fromBinary(
+          NatsMsgServerToClientSchema,
+          m.data,
+        ) as NatsMsgServerToClient;
         if (payload.event === NatsMsgServerToClientEvents.SESSION_ENDED) {
           // otherwise if connection closed then ack will not process
           m.ack();
@@ -472,7 +481,7 @@ export default class ConnectNats {
 
     for await (const m of sub) {
       try {
-        const payload = fromBinary(ChatMessageSchema, m.data);
+        const payload = fromBinary(ChatMessageSchema, m.data) as ChatMessage;
         await this.handleChat.handleMsg(payload);
         m.ack();
       } catch (e) {
@@ -493,7 +502,10 @@ export default class ConnectNats {
     const sub = await consumer.consume();
 
     const processData = async (m: JsMsg) => {
-      const payload = fromBinary(DataChannelMessageSchema, m.data);
+      const payload = fromBinary(
+        DataChannelMessageSchema,
+        m.data,
+      ) as DataChannelMessage;
       // whiteboard data should not process by the same sender
       if (payload.fromUserId !== this._userId) {
         if (
@@ -530,7 +542,10 @@ export default class ConnectNats {
     const sub = await consumer.consume();
 
     const processData = async (m: JsMsg) => {
-      const payload = fromBinary(DataChannelMessageSchema, m.data);
+      const payload = fromBinary(
+        DataChannelMessageSchema,
+        m.data,
+      ) as DataChannelMessage;
       if (
         typeof payload.toUserId !== 'undefined' &&
         payload.toUserId !== this._userId
@@ -617,7 +632,7 @@ export default class ConnectNats {
         create(NatsMsgClientToServerSchema, {
           event: NatsMsgClientToServerEvents.REQ_RENEW_PNM_TOKEN,
           msg: this._token,
-        }),
+        }) as NatsMsgClientToServer,
       );
     }, RENEW_TOKEN_FREQUENT);
   }
@@ -627,7 +642,7 @@ export default class ConnectNats {
       this.sendMessageToSystemWorker(
         create(NatsMsgClientToServerSchema, {
           event: NatsMsgClientToServerEvents.PING,
-        }),
+        }) as NatsMsgClientToServer,
       );
     };
     this.pingInterval = setInterval(() => {
@@ -640,7 +655,7 @@ export default class ConnectNats {
   private async handleInitialData(msg: string) {
     let data: NatsInitialData;
     try {
-      data = fromJsonString(NatsInitialDataSchema, msg);
+      data = fromJsonString(NatsInitialDataSchema, msg) as NatsInitialData;
     } catch (e: any) {
       console.error(e);
       this.setErrorStatus(
@@ -673,7 +688,7 @@ export default class ConnectNats {
     this.sendMessageToSystemWorker(
       create(NatsMsgClientToServerSchema, {
         event: NatsMsgClientToServerEvents.REQ_JOINED_USERS_LIST,
-      }),
+      }) as NatsMsgClientToServer,
     );
 
     // now subscribe to other channels
@@ -690,7 +705,10 @@ export default class ConnectNats {
     try {
       const onlineUsers: string[] = JSON.parse(msg);
       for (let i = 0; i < onlineUsers.length; i++) {
-        const user = fromJson(NatsKvUserInfoSchema, onlineUsers[i]);
+        const user = fromJson(
+          NatsKvUserInfoSchema,
+          onlineUsers[i],
+        ) as NatsKvUserInfo;
         await this.handleParticipants.addRemoteParticipant(user);
       }
       await this.onAfterUserReady();

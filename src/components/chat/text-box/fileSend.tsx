@@ -60,9 +60,7 @@ const FileSend = ({ lockSendFile }: IFileSendProps) => {
 
   const publishToChat = async (filePath: string, fileName: string) => {
     const message = `<span class="download"> <i class="pnm-download"></i> <a href="${
-      (window as any).PLUG_N_MEET_SERVER_URL +
-      '/download/uploadedFile/' +
-      filePath
+      (window as any).WEMEET_SERVER_URL + '/download/uploadedFile/' + filePath
     }" target="_blank">${fileName}</a></span>`;
 
     await conn.sendChatMsg(selectedChatOption, message);

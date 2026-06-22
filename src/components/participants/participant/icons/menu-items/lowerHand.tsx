@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {
   NatsMsgClientToServerSchema,
   NatsMsgClientToServerEvents,
+  NatsMsgClientToServer,
 } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
@@ -27,7 +28,7 @@ const LowerHandMenuItem = ({ userId }: ILowerHandMenuItemProps) => {
     const data = create(NatsMsgClientToServerSchema, {
       event: NatsMsgClientToServerEvents.REQ_LOWER_OTHER_USER_HAND,
       msg: userId,
-    });
+    }) as NatsMsgClientToServer;
     conn.sendMessageToSystemWorker(data);
   };
 

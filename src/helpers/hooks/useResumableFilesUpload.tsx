@@ -41,7 +41,7 @@ const useResumableFilesUpload = ({
     let fileName = '';
 
     const r = new Resumable({
-      target: (window as any).PLUG_N_MEET_SERVER_URL + '/api/fileUpload',
+      target: (window as any).WEMEET_SERVER_URL + '/api/fileUpload',
       uploadMethod: 'POST',
       query: {
         roomSid: session.currentRoom.sid,

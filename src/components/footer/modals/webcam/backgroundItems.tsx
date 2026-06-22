@@ -37,7 +37,7 @@ const BackgroundItems = ({ onSelect }: IBackgroundItemsProps) => {
   useEffect(() => {
     if (result && result.filePath) {
       const path =
-        (window as any).PLUG_N_MEET_SERVER_URL +
+        (window as any).WEMEET_SERVER_URL +
         '/download/uploadedFile/' +
         result.filePath;
 

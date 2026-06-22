@@ -9,7 +9,10 @@ import {
 } from '@headlessui/react';
 import { toast } from 'react-toastify';
 import copy from 'copy-text-to-clipboard';
-import { JoinBreakoutRoomReqSchema } from 'wemeet-protocol-js';
+import {
+  JoinBreakoutRoomReq,
+  JoinBreakoutRoomReqSchema,
+} from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
 import { useAppDispatch, useAppSelector } from '../../store';
@@ -118,7 +121,7 @@ const BreakoutRoomInvitation = () => {
       create(JoinBreakoutRoomReqSchema, {
         breakoutRoomId: receivedInvitationFor,
         userId: currentRoom.localParticipant.identity,
-      }),
+      }) as JoinBreakoutRoomReq,
     );
   };
 

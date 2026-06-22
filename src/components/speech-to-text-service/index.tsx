@@ -21,6 +21,7 @@ import SelectOptions, { OnCloseSelectedOptions } from './selectOptions';
 import { updateSelectedSubtitleLang } from '../../store/slices/speechServicesSlice';
 import SubtitleTextsHistory from './history';
 import { getMediaServerConnRoom } from '../../helpers/livekit/utils';
+import { CommonResponse, CommonResponseSchema } from 'wemeet-protocol-js';
 
 const tokenRenewInterval = 8 * 60 * 1000;
 
@@ -100,7 +101,7 @@ const SpeechToTextService = () => {
     let interval: any = undefined;
     if (recognizer) {
       interval = setInterval(async () => {
-        const res = await renewAzureToken();
+        const res = (await renewAzureToken()) as CommonResponse;
         if (res && !res.status) {
           toast(t(res.msg), {
             type: 'error',
@@ -143,7 +144,7 @@ const SpeechToTextService = () => {
     }
     const getToken = async () => {
       setOptionSelectionDisabled(true);
-      const res = await getAzureToken();
+      const res = (await getAzureToken()) as CommonResponse;
       if (!res.status) {
         toast(t(res.msg), {
           type: 'error',

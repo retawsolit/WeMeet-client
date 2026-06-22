@@ -10,7 +10,9 @@ import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import {
   ChangeEtherpadStatusReqSchema,
+  CommonResponse,
   CommonResponseSchema,
+  CreateEtherpadSessionRes,
   CreateEtherpadSessionResSchema,
   ExternalDisplayLinkReqSchema,
   ExternalDisplayLinkTask,
@@ -102,7 +104,10 @@ const MenusIcon = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('footer.notice.muted-all-microphone'), {
@@ -130,7 +135,10 @@ const MenusIcon = () => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CreateEtherpadSessionResSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CreateEtherpadSessionResSchema,
+        new Uint8Array(r),
+      ) as CreateEtherpadSessionRes;
       if (res.status) {
         dispatch(updateIsActiveSharedNotePad(true));
       } else {
@@ -150,7 +158,10 @@ const MenusIcon = () => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CreateEtherpadSessionResSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CreateEtherpadSessionResSchema,
+        new Uint8Array(r),
+      ) as CreateEtherpadSessionRes;
       if (res.status) {
         dispatch(updateIsActiveSharedNotePad(true));
       } else {
@@ -170,7 +181,10 @@ const MenusIcon = () => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CreateEtherpadSessionResSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CreateEtherpadSessionResSchema,
+        new Uint8Array(r),
+      ) as CreateEtherpadSessionRes;
       if (res.status) {
         dispatch(updateIsActiveSharedNotePad(false));
       } else {
@@ -207,7 +221,10 @@ const MenusIcon = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (!res.status) {
       toast.update(id, {
@@ -247,7 +264,10 @@ const MenusIcon = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (!res.status) {
       toast.update(id, {
@@ -306,7 +326,8 @@ const MenusIcon = () => {
                   static
                   className="origin-bottom-left sm:-left-20 lg:-left-28 right-0 sm:right-auto z-[9999] absolute mt-2 w-60 lg:w-72 bottom-[48px] rounded-md shadow-lg bg-white dark:bg-darkPrimary ring-1 ring-black dark:ring-secondaryColor ring-opacity-5 divide-y divide-gray-100 dark:divide-secondaryColor focus:outline-none"
                 >
-                  {roomFeatures?.allowRtmp ? (
+                  {/*
+                  {(roomFeatures?.allowRtmp ?? true) ? (
                     <div className="py-1" role="none">
                       <MenuItem>
                         <button
@@ -327,6 +348,8 @@ const MenusIcon = () => {
                       </MenuItem>
                     </div>
                   ) : null}
+                  */}
+
                   <div className="py-1" role="none">
                     <MenuItem>
                       <button
@@ -338,6 +361,8 @@ const MenusIcon = () => {
                       </button>
                     </MenuItem>
                   </div>
+
+                  {/*
                   {roomFeatures?.sharedNotePadFeatures?.allowedSharedNotePad ? (
                     <div className="py-1" role="none">
                       <MenuItem>
@@ -353,6 +378,8 @@ const MenusIcon = () => {
                       </MenuItem>
                     </div>
                   ) : null}
+                   */}
+
                   {roomFeatures?.externalMediaPlayerFeatures
                     ?.allowedExternalMediaPlayer ? (
                     <div className="py-1" role="none">
@@ -369,7 +396,8 @@ const MenusIcon = () => {
                       </MenuItem>
                     </div>
                   ) : null}
-                  {roomFeatures?.displayExternalLinkFeatures?.isAllow ? (
+                  {(roomFeatures?.displayExternalLinkFeatures?.isAllow ??
+                  true) ? (
                     <div className="py-1" role="none">
                       <MenuItem>
                         <button
@@ -410,7 +438,7 @@ const MenusIcon = () => {
                       </MenuItem>
                     </div>
                   ) : null}
-                  {roomFeatures?.breakoutRoomFeatures?.isAllow ? (
+                  {(roomFeatures?.breakoutRoomFeatures?.isAllow ?? true) ? (
                     <div className="py-1" role="none">
                       <MenuItem>
                         <button

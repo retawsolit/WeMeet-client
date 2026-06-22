@@ -3,6 +3,7 @@ import { ExcalidrawImperativeAPI } from '@excalidraw/excalidraw/types/types';
 import { toast } from 'react-toastify';
 import {
   CommonResponseSchema,
+  CommonResponse,
   SwitchPresenterReqSchema,
   SwitchPresenterTask,
 } from 'wemeet-protocol-js';
@@ -170,7 +171,10 @@ const FooterUI = ({ excalidrawAPI, isPresenter }: IFooterUIProps) => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
 
     if (res.status) {
       toast(t('left-panel.menus.notice.presenter-changed'), {

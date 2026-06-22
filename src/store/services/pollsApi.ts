@@ -16,7 +16,7 @@ import { requestToRenewPnmToken } from '../../helpers/api/WeMeetAPI';
 export const pollsApi = createApi({
   reducerPath: 'pollsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: (window as any).PLUG_N_MEET_SERVER_URL + '/api/polls',
+    baseUrl: (window as any).WEMEET_SERVER_URL + '/api/polls',
     prepareHeaders: (headers, api) => {
       // @ts-expect-error not an error
       const token = api.getState().session.token;

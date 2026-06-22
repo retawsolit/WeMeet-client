@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {
   NatsMsgClientToServerEvents,
   NatsMsgClientToServerSchema,
+  NatsMsgClientToServer,
 } from 'wemeet-protocol-js';
 import { create } from '@bufbuild/protobuf';
 
@@ -198,7 +199,10 @@ const useKeyboardShortcuts = (currentRoom?: Room) => {
     currentRoom: Room,
   ) => {
     const conn = getNatsConn();
-    const data = create(NatsMsgClientToServerSchema, {});
+    const data = create(
+      NatsMsgClientToServerSchema,
+      {},
+    ) as NatsMsgClientToServer;
 
     if (!isActiveRaisehand) {
       data.event = NatsMsgClientToServerEvents.REQ_RAISE_HAND;

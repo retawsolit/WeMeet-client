@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import {
   CommonResponseSchema,
   RoomEndAPIReqSchema,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -86,7 +87,10 @@ const Header = () => {
         'application/protobuf',
         'arraybuffer',
       );
-      const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+      const res = fromBinary(
+        CommonResponseSchema,
+        new Uint8Array(r),
+      ) as CommonResponse;
       if (!res.status) {
         toast(res.msg, {
           type: 'error',

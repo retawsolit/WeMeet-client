@@ -12,6 +12,8 @@ import {
   CommonResponseSchema,
   RecordingReqSchema,
   RecordingTasks,
+  RecordingReq,
+  CommonResponse,
 } from 'wemeet-protocol-js';
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 
@@ -73,7 +75,7 @@ const RtmpModal = () => {
       task: RecordingTasks.START_RTMP,
       sid: store.getState().session.currentRoom.sid,
       rtmpUrl: url + '/' + serverKey,
-    });
+    }) as RecordingReq;
 
     if (typeof (window as any).DESIGN_CUSTOMIZATION !== 'undefined') {
       body.customDesign = `${(window as any).DESIGN_CUSTOMIZATION}`.replace(
@@ -89,7 +91,10 @@ const RtmpModal = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
     let msg = 'footer.notice.rtmp-starting';
 
     if (!res.status) {
@@ -264,7 +269,10 @@ const RtmpModal = () => {
       'application/protobuf',
       'arraybuffer',
     );
-    const res = fromBinary(CommonResponseSchema, new Uint8Array(r));
+    const res = fromBinary(
+      CommonResponseSchema,
+      new Uint8Array(r),
+    ) as CommonResponse;
     let msg = t('footer.notice.rtmp-ending');
 
     if (!res.status) {
