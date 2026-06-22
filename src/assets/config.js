@@ -1,4 +1,4 @@
-window.WEMEET_SERVER_URL = 'http://10.238.51.41:8080';
+window.WEMEET_SERVER_URL = 'http://192.168.2.19:8080';
 
 
 
